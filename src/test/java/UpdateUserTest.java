@@ -2,7 +2,6 @@ import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.http.HttpStatus;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -30,6 +29,8 @@ public class UpdateUserTest extends BaseTest {
     private final String email;
     private final String password;
     private final String name;
+    // переменная введена для отображения имени теста при прогоне параметризованных тестов
+    // используется в строке 43 в аргументе у Parameters
     private final String testName;
 
     public UpdateUserTest(String email, String password, String name, String testName) {
@@ -41,7 +42,7 @@ public class UpdateUserTest extends BaseTest {
 
     @Parameterized.Parameters(name = "{index} : update {3}")
     public static Object[][] getParameters() {
-        return new Object[][] {
+        return new Object[][]{
                 {createUniqueEmail(), createPassword(), createName(), "all fields"},
                 {createUniqueEmail(), OLD, OLD, EMAIL},
                 {OLD, createPassword(), OLD, PASSWORD},

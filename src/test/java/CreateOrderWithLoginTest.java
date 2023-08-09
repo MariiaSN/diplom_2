@@ -1,4 +1,3 @@
-import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
@@ -9,11 +8,12 @@ import ru.yandex.practicum.generator.IngredientsGenerator;
 import ru.yandex.practicum.model.Ingredient.Ingredient;
 import ru.yandex.practicum.model.order.OrderAfterCreate;
 
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertEquals;
 
 @Slf4j
@@ -72,7 +72,7 @@ public class CreateOrderWithLoginTest extends BaseTest {
 
     private List<String> getActual(OrderAfterCreate orderAfterCreate) {
         List<String> actual = new ArrayList<>();
-        for(Ingredient ingredient : orderAfterCreate.getIngredients()) {
+        for (Ingredient ingredient : orderAfterCreate.getIngredients()) {
             actual.add(ingredient.get_id());
         }
         return actual;

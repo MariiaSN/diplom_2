@@ -1,6 +1,4 @@
-import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.junit.Before;
 import org.junit.Test;
 import ru.yandex.practicum.client.user.UserClient;
 import ru.yandex.practicum.generator.UserGenerator;

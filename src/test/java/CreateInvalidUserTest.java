@@ -1,4 +1,3 @@
-import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -77,6 +76,7 @@ public class CreateInvalidUserTest {
                 .and().body(SUCCESS, equalTo(false))
                 .and().body(MESSAGE, equalTo(TEXT_MESSAGE_REQUIRED_FIELDS));
     }
+
     @Test
     public void registerUserWithEmailNull() {
         User user = userGenerator.createUserWithEmailNull();

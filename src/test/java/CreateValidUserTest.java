@@ -1,15 +1,10 @@
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
 import org.junit.Test;
 import ru.yandex.practicum.client.user.UserClient;
 import ru.yandex.practicum.generator.UserGenerator;
-import ru.yandex.practicum.model.user.User;
-import ru.yandex.practicum.model.user.UserWithoutEmail;
-import ru.yandex.practicum.model.user.UserWithoutName;
-import ru.yandex.practicum.model.user.UserWithoutPassword;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
